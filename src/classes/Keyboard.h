@@ -2,7 +2,12 @@
 #define DEF_KEYBOARD
 
 #include <iostream>
-#include "/usr/include/libusb-1.0/libusb.h"
+
+#ifndef __APPLE__
+  #include "/usr/include/libusb-1.0/libusb.h"
+#else
+  #include "/usr/local/include/libusb-1.0/libusb.h"
+#endif
 
 class Keyboard {
 
